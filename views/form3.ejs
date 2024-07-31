@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('partials/head.ejs', {title:'Kereső'}) %>
+
+  <body>
+    <h1>KERESŐ FORM</h1>
+    <form action="/form3.ejs" method="POST">
+      <p>Cím:<input type="text" name="cim"></p>
+
+      <p>Szerző:<input type="text" name="szerzo"></p>
+
+      <p>Minimum év: <input type="number" name="minev" min="1"></p>
+
+      <p>Maximum év:<input type="number" name="maxev" max="2024"></p>
+
+      <p>
+        <input type="checkbox" name="raktaron">
+        <label for="raktaron">Készleten</label>
+      </p>
+
+      <button type="submit">Keresés</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs', {title:'Lista'}) %>
+
+<body>
+
+    <p id="uzenet"><% if (message) { %>
+        <%= message %>
+        <% } %>
+      </p>
+    <h1><%=bejelentkezettFelhasznalo%> kölcsönzései</h1>
+    <table>
+        <th>isbn</th>
+        <th>cim</th>
+
+        <% reszletek.forEach((row)=>{%>
+            <tr id="<%=row.nev%>/<%=row.isbn%>" class="sorok">
+                <td><%=row.isbn%></td>
+                <td><%=row.cim%></td>
+                <% if(bejelentkezettFelhasznalo === row.nev){ %>
+                <td><button id="<%=row.isbn%>gomb" class="gomb">Töröl</button></td>
+                <% } %>
+            </tr>
+        <%}); %>
+
+    </table>
+
+    <nav>
+        <a href="/"><div class="navgomb">Főoldalra</div></a>
+    </nav>
+
+
+    <script src="/reszletek.js"></script>
+</body>
+</html>

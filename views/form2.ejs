@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('partials/head.ejs', {title:'Kikölcsönző'}) %>
+
+  <body>
+
+    <p id="uzenet"><% if (uzenet) { %>
+        <%= uzenet %>
+        <% } %>
+    </p>
+
+    <h1>KÖLCSÖNZÖ FORM</h1>
+    <form action="/form2.ejs" method="POST">
+      <p>Név: <input type="text" name="nev" value="<%=bejelentkezettFelhasznalo%>" required></p>
+      <p>ISBN: <input type="text" name="isbn" value="" required></p>
+      <p>
+        Művelet:
+        <select name="muvelet" required>
+          <option value="kolcsonoz">Kikölcsönzés</option>
+          <option value="visszasz">Visszaszolgáltatás</option>
+        </select>
+      </p>
+      <p><button type="submit">Végrehajt!</button></p>
+    </form>
+
+    <nav>
+      <a href="/"><div class="navgomb">Főoldalra</div></a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs', {title:'Bevezető'}) %>
+
+  <body>
+    <h1>BEVEZETŐ FORM</h1>
+    <form action="/form1.ejs" method="POST" enctype="multipart/form-data">
+      <p>ISBN: <input type="number" name="isbn" value="" required></p>
+      <p>Cím: <input type="text" name="cim" value="" required></p>
+      <p>Szerző: <input type="text" name="szerzo" required></p>
+      <p>Kiadási év: <input type="number" name="megjev" required max="2024"></p>
+      <p>Rövid összefoglaló: <textarea name="osszef" required></textarea></p>
+      <p>Borítókép: <input type="file" name="borito" id="borito" required accept="image/*"></p>
+      <p>Példányok száma: <input type="number" name="peldanyok" required min="1"></p>
+      <p><button type="submit">Bevezet!</button></p>
+    </form>
+
+    <nav>
+        <a href="/"><div class="navgomb">Főoldalra</div></a>
+    </nav>
+  </body>
+</html>

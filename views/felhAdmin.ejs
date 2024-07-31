@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs', {title:'Felhasználók'}) %>
+<body>
+
+    <form action="/felhAdmin.ejs" method="POST">
+      <p>Név:<input type="text" name="nev"></p>
+
+      <p>Szerepkör:<input type="text" name="szerepkor"></p>
+
+      <p><button type="submit">Keresés</button></p>
+    </form>
+
+
+    <table>
+        <th>név</th>
+        <th>szerepkör</th>
+
+        <% felhasznaloLista.forEach((row)=>{ %>
+
+        <tr>
+            <td><%=row.nev%></td>
+            <td id="<%=row.nev%>szerep"><%=row.szerepkor%></td>
+            <% if (row.szerepkor === 'admin' && row.nev != 'admin') { %>
+                <td><button id="<%=row.nev%>" class="gomb">Lefokoz</button></td>
+            <% } else if(row.szerepkor === 'felhasznalo'){ %>
+                <td><button id="<%=row.nev%>" class="gomb">Előléptet</button></td>
+            <% } %>
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+    <%- include('partials/navEgyszeru.ejs') %>
+
+    <script src="/szerepkor.js"></script>
+
+</body>
+</html>

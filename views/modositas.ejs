@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs', {title:'Adatok módosítása'}) %>
+<body>
+
+    <p id="uzenet"><% if (uzenet) { %>
+        <%= uzenet %>
+        <% } %>
+      </p>
+
+    <form action="/adatokModositasa" method="POST">
+      <p>Új felhasználónév:<input type="text" name="felhasznalonev"></p>
+
+      <p>Új jelszó:<input type="password" name="jelszo"></p>
+
+      <p>Új jelszó ismét:<input type="password" name="jelszoismet"></p>
+
+      <button type="submit" class="bejelgomb">Módosít!</button>
+    </form>
+
+    <%- include('partials/navEgyszeru.ejs') %>
+
+</body>
+</html>

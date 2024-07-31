@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs', {title:'Értékelések'}) %>
+<body>
+
+    <p id="uzenet"><% if (uzenet) { %>
+        <%= uzenet %>
+        <% } %>
+    </p>
+
+    <h1><%=bejelentkezettFelhasznalo%> értékelései</h1>
+
+    <table>
+        <th>isbn</th>
+        <th>cím</th>
+        <th>értékelés</th>
+
+        <% ertekelesek.forEach((row) => {%>
+            <tr id="<%=row.isbn%>">
+                <td><%= row.isbn %></td>
+                <td><%= row.cim %></td>
+                <td><%= row.ertekeles %></td>
+            </tr>
+        <%});%>
+        <form action="/ertekelesek/<%=bejelentkezettFelhasznalo%>" method="POST">
+            <tr>
+                <td><input type="number" name="isbn" value="" required min="9780000000000" max="9799999999999"></td>
+                <td><input type="text" name="cim" value="" required></td>
+                <td><input type="number" name="ertekeles" value="" required min="1" max="10"></td>
+            </tr>
+            <p><button type="submit">Értékel!</button></p>
+        </form>
+
+    </table>
+
+    <%- include('partials/navEgyszeru.ejs') %>
+</body>
+</html>

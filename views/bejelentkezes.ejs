@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs', {title:'Bejelentkezés'}) %>
+<body>
+    <% if (uzenet) { %>
+      <p id="uzenet"><%= uzenet %></p>
+    <% } %>
+    <form action="/bejelentkezes" method="POST">
+      <p>Felhasználónév:<input type="text" name="felhasznalonev"></p>
+
+      <p>Jelszó:<input type="password" name="jelszo"></p>
+
+      <button type="submit" class="bejelgomb">Bejelentkezek!</button>
+    </form>
+
+    <%- include('partials/navEgyszeru.ejs') %>
+</body>
+</html>

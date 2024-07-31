@@ -1,0 +1,123 @@
+body {
+  text-align: center;
+  padding-top: 50px;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #e3a66a;
+}
+
+#noISBN {
+  display: none;
+}
+
+#noisbnP {
+  display: none;
+}
+
+nav {
+  width: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px 5px;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+}
+
+.navgomb {
+  height: 100%;
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(214, 136, 34);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-weight: bold;
+  align-self: center;
+  margin: 0 10px;
+}
+
+.navgomb:hover {
+  background-color: #555;
+}
+
+#fooldalA:visited {
+  text-decoration: none;
+}
+#fooldalA {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: rgb(214, 136, 34);
+  color: white;
+  border: none;
+  padding: 3px 10px;
+  margin: 3px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #555;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #555;
+  transform: scale(0.95);
+}
+
+form {
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+form input[type='text'],
+form input[type='email'],
+form input[type='password'],
+form input[type='number'],
+form select,
+form textarea {
+  width: 15%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

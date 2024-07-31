@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs', {title:'Regisztráció'}) %>
+<body>
+    <p>REGISZTRÁLJ</p>
+
+    <% if (uzenet) { %>
+      <p id="uzenet"><%= uzenet %></p>
+    <% } %>
+    <form action="/regisztracio" method="POST">
+      <p>Felhasználónév:<input type="text" name="felhasznalonev"></p>
+      <p>Jelszó:<input type="password" name="jelszo"></p>
+      <p>Jelszó ismét:<input type="password" name="jelszoismet"></p>
+      <select name="szerepkor" required>
+        <option value="felhasznalo">Felahasználó</option>
+      </select>
+      <button type="submit" class="regisztralgomb">Regisztrálok!</button>
+    </form>
+
+    <%- include('partials/navEgyszeru.ejs') %>
+</body>
+</html>
